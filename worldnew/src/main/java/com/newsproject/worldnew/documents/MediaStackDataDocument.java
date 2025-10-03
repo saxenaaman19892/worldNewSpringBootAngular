@@ -1,6 +1,9 @@
 package com.newsproject.worldnew.documents;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "media_stack_document")
 public class MediaStackDataDocument {
 
     private String author;
@@ -22,6 +25,9 @@ public class MediaStackDataDocument {
     private String country;
 
     private String publishedAt;
+
+    @Id
+    private String id;
 
     public String getAuthor() {
         return author;
@@ -101,5 +107,13 @@ public class MediaStackDataDocument {
 
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

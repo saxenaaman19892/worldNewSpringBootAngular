@@ -3,6 +3,7 @@ package com.newsproject.worldnew.service;
 import com.newsproject.worldnew.documents.MediaStackDataDocument;
 import com.newsproject.worldnew.documents.MediaStackDocument;
 import com.newsproject.worldnew.documents.MediaStackPaginationDocument;
+import com.newsproject.worldnew.dto.MediaStackData;
 import com.newsproject.worldnew.dto.MediaStackDto;
 import org.springframework.stereotype.Component;
 
@@ -42,5 +43,22 @@ public class MediaStackMapper {
         document.setDataDocuments(dataDocuments);
 
         return document;
+    }
+
+    public MediaStackData getMediaStackDtoFromEntity(MediaStackDataDocument document) {
+        MediaStackData data = new MediaStackData();
+
+        data.setAuthor(document.getAuthor());
+        data.setCategory(document.getCategory());
+        data.setCountry(document.getCountry());
+        data.setDescription(document.getDescription());
+        data.setImage(document.getImage());
+        data.setUrl(document.getUrl());
+        data.setTitle(document.getTitle());
+        data.setSource(document.getSource());
+        data.setLanguage(document.getLanguage());
+        data.setPublishedAt(document.getPublishedAt());
+
+        return data;
     }
 }
